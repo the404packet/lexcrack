@@ -17,50 +17,9 @@ Built with **Fastify** (backend) + **React + Vite** (frontend). No database. Eve
 
 ---
 
-## Project Structure
-
-```
-lexcrack/
-├── backend/
-│   ├── data/
-│   │   ├── sowpods.txt      ← Full SOWPODS list (~267k words)
-│   │   └── common.txt       ← Common English words (~10–20k words)
-│   ├── server.js            ← Fastify server
-│   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx          ← Main UI component
-│   │   ├── App.css          ← Styles
-│   │   ├── index.css        ← Global styles + animations
-│   │   └── main.jsx         ← React entry point
-│   ├── index.html
-│   ├── vite.config.js
-│   └── package.json
-├── .gitignore
-├── LICENSE
-└── README.md
-```
-
----
-
 ## Getting Started (Local)
 
-### 1. Add the full word lists (recommended)
-
-Replace the sample word lists with real ones for best results:
-
-- **SOWPODS** (~267k words): Download from [jesstess/Scrabble](https://github.com/jesstess/Scrabble/blob/master/scrabble/sowpods.txt)
-- **Common words** (~10k words): Any curated English frequency list works
-
-Place them at:
-```
-backend/data/sowpods.txt
-backend/data/common.txt
-```
-
-One word per line, lowercase. The server loads them once at startup.
-
-### 2. Run the backend
+### 1. Run the backend
 
 ```bash
 cd backend
@@ -69,7 +28,7 @@ node server.js
 # Runs on http://localhost:3001
 ```
 
-### 3. Run the frontend
+### 2. Run the frontend
 
 ```bash
 cd frontend
@@ -79,40 +38,6 @@ npm run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) — the Vite dev server proxies `/solve` to the backend automatically.
-
----
-
-## API
-
-### `POST /solve`
-
-**Request**
-```json
-{
-  "letters": "aetr?",
-  "lengths": [3, 4, 5]
-}
-```
-
-| Field     | Type       | Required | Notes                                        |
-|-----------|------------|----------|----------------------------------------------|
-| `letters` | `string`   | ✅        | a–z and `?` only, max 15 chars               |
-| `lengths` | `integer[]`| ❌        | Values 2–15. Omit to return all lengths.     |
-
-**Response**
-```json
-{
-  "3": ["ate", "eat", "eta", "rat", "tar"],
-  "4": ["rate", "tear", "tare", "rare"],
-  "5": ["rater", "tater"]
-}
-```
-
-Keys are word lengths. Words are sorted: common words first, then alphabetically.
-
-### `GET /health`
-
-Returns `{ "status": "ok" }`. Useful for uptime checks.
 
 ---
 
@@ -148,13 +73,6 @@ Returns `{ "status": "ok" }`. Useful for uptime checks.
 
 ---
 
-## Rate Limiting
-
-`POST /solve` is limited to **60 requests per minute per IP**.  
-Exceeding this returns a `429` response.
-
----
-
 ## Tech Stack
 
 | Layer    | Technology                            |
@@ -162,7 +80,6 @@ Exceeding this returns a `429` response.
 | Backend  | Node.js, Fastify, @fastify/cors, @fastify/helmet, @fastify/rate-limit |
 | Frontend | React 18, Vite 5                      |
 | Fonts    | Syne (display), DM Mono (code)        |
-| Deploy   | Render (backend), Vercel (frontend)   |
 
 ---
 
