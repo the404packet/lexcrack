@@ -1,0 +1,48 @@
+# Node modules
+**/node_modules/
+**/backend/node_modules/
+**/frontend/node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vite / frontend build
+**/frontend/dist/
+**/.vite/
+
+# Build artifacts
+**/backend/build/
+**/frontend/build/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# VSCode / IDE settings
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Coverage / test results
+coverage/
+*.lcov
+
+# Misc
+*.bak
+*.swp
+*.swo
