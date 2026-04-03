@@ -37,7 +37,7 @@ function HowToModal({ onClose }) {
             <span className="step-num">04</span>
             <div>
               <strong>Scoring</strong>
-              <p>Common words are shown first (⭐ score), followed by valid Scrabble/SOWPODS words.</p>
+              <p>Common words are shown first, followed by valid words.</p>
             </div>
           </div>
         </div>
