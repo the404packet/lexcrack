@@ -47,7 +47,7 @@ sowpods_words = clean_txt(fetch(SOWPODS_URL))
 out = os.path.join(DATA_DIR, "sowpods.txt")
 with open(out, "w", encoding="utf-8") as f:
     f.write("\n".join(sorted(sowpods_words, key=lambda w: (len(w), w))))
-print(f"  Saved {len(sowpods_words):,} words → {out}\n")
+print(f"  Saved {len(sowpods_words):,} words\n")
 
 # ── Common words ──────────────────────────────────────────────────────────────
 print("Downloading common words...")
@@ -56,6 +56,6 @@ print(f"  Fetched {len(common_words):,} words")
 out = os.path.join(DATA_DIR, "common.txt")
 with open(out, "w", encoding="utf-8") as f:
     f.write("\n".join(sorted(common_words, key=lambda w: (len(w), w))))
-print(f"  Saved {len(common_words):,} words → {out}")
+print(f"  Saved {len(common_words):,} words")
 
 print("\nDone! Run: node server.js")
