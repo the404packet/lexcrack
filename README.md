@@ -37,39 +37,7 @@ npm run dev
 # Runs on http://localhost:5173
 ```
 
-Open [http://localhost:5173](http://localhost:5173) — the Vite dev server proxies `/solve` to the backend automatically.
-
----
-
-## Deployment
-
-### Backend → Render
-
-1. Push the `backend/` folder to a GitHub repo
-2. Create a new **Web Service** on [render.com](https://render.com)
-3. Set:
-   - **Build command**: `npm install`
-   - **Start command**: `node server.js`
-   - **Environment variable**: `FRONTEND_ORIGIN=https://your-app.vercel.app`
-
-### Frontend → Vercel
-
-1. Push the `frontend/` folder to a GitHub repo
-2. Import into [vercel.com](https://vercel.com)
-3. Set environment variable:
-   - `VITE_API_URL=https://your-render-app.onrender.com`
-4. Deploy — Vercel auto-detects Vite
-
----
-
-## Configuration
-
-| Environment Variable | Where   | Default                  | Description                    |
-|----------------------|---------|--------------------------|--------------------------------|
-| `PORT`               | Backend | `3001`                   | Server port                    |
-| `FRONTEND_ORIGIN`    | Backend | `http://localhost:5173`  | Allowed CORS origin            |
-| `NODE_ENV`           | Backend | —                        | Set to `production` on Render  |
-| `VITE_API_URL`       | Frontend| `''` (uses proxy)        | Backend URL for production     |
+Open [http://localhost:5173](http://localhost:5173) 
 
 ---
 

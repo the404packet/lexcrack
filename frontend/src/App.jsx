@@ -260,6 +260,10 @@ export default function App() {
               </>
             )}
           </button>
+
+          <p className="cold-start-notice">
+            ℹ️ Your first request may take up to 30 seconds as the server wakes up from idle. Subsequent requests will be fast.
+          </p>
         </div>
 
         {/* Error state */}
