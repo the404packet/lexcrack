@@ -255,7 +255,6 @@ export default function App() {
               </>
             ) : (
               <>
-                <span className="btn-icon">⚡</span>
                 Crack
               </>
             )}
