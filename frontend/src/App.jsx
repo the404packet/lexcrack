@@ -261,7 +261,12 @@ export default function App() {
           </button>
 
           <p className="cold-start-notice">
-            ℹ️ Your first request may take up to 30 seconds as the server wakes up from idle. Subsequent requests will be fast.
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: 'middle', marginRight: '5px', color: 'var(--accent)' }}>
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+            Your first request may take up to 30 seconds as the server wakes up from idle. Subsequent requests will be fast.
           </p>
         </div>
 
